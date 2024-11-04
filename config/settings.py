@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'laboratorio.apps.LaboratorioConfig',
+    'crud.apps.CrudConfig'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'

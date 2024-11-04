@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initialscale=1.0">
+        <title>Buscar Laboratorios</title>
+        <style>
+    table {
+    border: 8px outset;
+    border-radius: 10px;
+    border-spacing: 10px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    th,
+    td {
+    padding: 5px;
+    border: 1px solid;
+    }
+        </style>
+    </head>
+    <body>
+        <h2>Información del laboratorio</h2>
+        <table >
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Ciudad</th>
+                    <th>País</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for laboratorio in laboratorios %}
+                <tr>
+                    <td>{{ laboratorio.nombre }}</td>
+                    <td>{{ laboratorio.ciudad }}</td>
+                    <td>{{ laboratorio.pais }}</td>
+                    <td>
+                        <a href="{% url 'editar_lab' laboratorio.id %}">Actualizar</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'eliminar_lab' laboratorio.id %}">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <br /><br />
+        <div class="alert alert-danger" role="alert">
+            <a href="{% url 'insertar_lab' %}">¿Quieres ingresar otro laboratorio?</a>
+        </div>
+
+        <p>Usted ha visitado esta página {{ num_visitas }} veces.</p>
+    </body>
+</html>
