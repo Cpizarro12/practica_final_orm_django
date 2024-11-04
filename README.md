@@ -125,3 +125,7 @@ Producto3 laboratorio3
 - Se crean las vistas, posteriormente los templates y finalmente las urls.
 
 ## Pruebas:
+- Se realizan las siguientes pruebas para verificar los siguiente:
+- Que los datos en nuestra base de datos simulada coincidan con los que se crearon inicialmente en setUpTestData para un laboratorio dado. 
+- La URL para confirmar que devuelve una respuesta HTTP 200 para laboratorio
+- Y finalmente, que la página usando reverse para llamar al nombre de la URL, busca una respuesta HTTP 200, verifica que se use la plantilla correcta, y confirma que el contenido HTML coincide con lo esperado
